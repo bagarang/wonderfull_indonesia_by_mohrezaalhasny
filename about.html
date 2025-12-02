@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About – Wonderful Indonesia</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/about.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+
+      <div class="brand">
+        <a href="./index.html" aria-label="Wonderful Indonesia - Home">
+          <img src="https://i.imgur.com/AlXf6fy.jpeg" alt="Logo Moh Reza Alhasny" class="brand-logo">
+        </a>
+      </div>
+
+      <nav class="site-nav" aria-label="Site Navigation">
+        <ul class="nav-list">
+
+          <li><a class="nav-link" href="./index.html">Home</a></li>
+
+          <li class="nav-item-dropdown">
+            
+            <a href="./destination.html" class="nav-link drop-main">Destination</a>
+
+            <button class="drop-toggle" aria-haspopup="true" aria-expanded="false">▾</button>
+
+            <div class="dropdown-panel" aria-hidden="true">
+              <a href="./destination/sabang.html" class="dropdown-item">Sabang</a>
+              <a href="./destination/toba.html" class="dropdown-item">Toba</a>
+              <a href="./destination/bromo.html" class="dropdown-item">Bromo</a>
+              <a href="./destination/labuanbajo.html" class="dropdown-item">Labuan Bajo</a>
+              <a href="./destination/rajaampat.html" class="dropdown-item">Raja Ampat</a>
+            </div>
+
+          </li>
+
+          <li><a class="nav-link" href="./about.html">About</a></li>
+          
+          <li><a class="nav-link" href="./contact.html">Contact</a></li>
+
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="about-main">
+
+    <div class="mini-gallery">
+      <img src="https://i.imgur.com/16BN9F7.jpeg" alt="Bromo" class="gallery-thumb">
+      <img src="https://i.imgur.com/1OK2cE3.jpeg" alt="Labuan Bajo" class="gallery-thumb">
+      <img src="https://i.imgur.com/YCjOc8e.jpeg" alt="Raja Ampat" class="gallery-thumb">
+      <img src="https://i.imgur.com/XWgi8pt.jpeg" alt="Sabang" class="gallery-thumb">
+      <img src="https://i.imgur.com/YzkkEXX.jpeg" alt="Toba" class="gallery-thumb">
+    </div>
+
+    <h1 class="page-title">WONDERFUL INDONESIA</h1>
+
+    <section class="lead-text">
+      <p>
+        Indonesia bukan sekadar tempat untuk dikunjungi — ia adalah pengalaman yang meresap ke dalam jiwa.
+        Dari garis pantai berpasir putih di Sabang hingga rimbunnya terumbu karang di Raja Ampat,
+        setiap sudut Nusantara menyimpan warna, cerita, dan budaya yang menunggu untuk ditemukan.
+      </p>
+
+      <p>
+        Kami mengajakmu menyusuri lanskap yang memukau, meresapi tradisi lokal, dan merayakan
+        keanekaragaman yang menjadikan Indonesia begitu istimewa. Jelajahi pelan — tetapi penuh makna.
+      </p>
+    </section>
+
+  </main>
+
+  <script>
+    (function(){
+      const toggle = document.querySelector('.drop-toggle');
+      const panel = document.querySelector('.dropdown-panel');
+
+      if(toggle && panel){
+        // Event klik pada tombol panah
+        toggle.addEventListener('click', function(e){
+          e.stopPropagation(); // Mencegah klik tembus ke elemen lain
+          const visible = panel.getAttribute('aria-hidden') === 'false';
+          
+          // Toggle status visible/hidden
+          panel.setAttribute('aria-hidden', visible ? 'true' : 'false');
+          toggle.setAttribute('aria-expanded', visible ? 'false' : 'true');
+        });
+
+        // Menutup dropdown jika klik di sembarang tempat di luar menu
+        document.addEventListener('click', function(ev){
+          if (!ev.target.closest('.nav-item-dropdown')) {
+            panel.setAttribute('aria-hidden', 'true');
+            toggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>

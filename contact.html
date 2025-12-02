@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wonderful Indonesia</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Playfair+Display:wght@400;500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/home.css" />
+
+    <style>
+        /* Reset margin dasar agar header mepet atas */
+        body { margin: 0; padding: 0; }
+
+        /* --- STYLE HEADER --- */
+        .site-header {
+            position: absolute; /* Agar transparan di atas background */
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 40px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .header-brand img {
+            height: 50px; /* Ukuran logo di header */
+            width: auto;
+            border-radius: 50%; /* Opsional: agar bulat */
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #fff; /* Warna teks menu putih */
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Bayangan agar terbaca */
+            transition: color 0.3s;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .nav-link:hover { color: #f4d03f; }
+
+        /* --- DROPDOWN MENU --- */
+        .nav-item-dropdown { position: relative; }
+        
+        .dropdown-panel {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(0, 0, 0, 0.9);
+            min-width: 160px;
+            border-radius: 5px;
+            padding: 10px 0;
+            display: none; /* Hidden by default */
+            flex-direction: column;
+        }
+
+        .dropdown-panel[aria-hidden="false"] { display: flex; }
+
+        .dropdown-item {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .dropdown-item:hover { background: rgba(255, 255, 255, 0.2); }
+
+        /* --- MAIN CONTENT ADJUSTMENTS --- */
+        /* Mengatur ulang posisi agar logo dan teks berdekatan */
+        .landing-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            color: white;
+        }
+
+        /* Logo Utama di Tengah */
+        .landing-logo {
+            width: 150px; /* Sesuaikan ukuran */
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px; /* Jarak ke judul diperkecil (REQUEST NO. 2) */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Judul Utama */
+        .landing-title {
+            margin-top: 0; /* Menghilangkan margin atas agar dekat dengan logo */
+            margin-bottom: 5px;
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .landing-subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        /* --- CONTACT PERSON SECTION (REQUEST NO. 3 & 4) --- */
+        .contact-section {
+            background: rgba(0, 0, 0, 0.6); /* Latar belakang transparan gelap */
+            padding: 20px 40px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.5);
+            display: inline-block;
+            padding-bottom: 5px;
+            letter-spacing: 2px;
+        }
+
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-link {
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: transform 0.2s, color 0.2s;
+        }
+
+        .contact-link:hover {
+            transform: scale(1.05);
+            color: #f4d03f;
+        }
+
+        .icon { font-size: 1.2rem; }
+
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-brand">
+            <a href="./index.html">
+                <img src="https://i.imgur.com/AlXf6fy.jpeg" alt="Logo Header">
+            </a>
+        </div>
+
+        <nav>
+            <ul class="nav-list">
+                <li><a href="./index.html" class="nav-link">Home</a></li>
+                <li><a href="./about.html" class="nav-link">About</a></li>
+                
+                <li class="nav-item-dropdown">
+                    <button class="nav-link drop-toggle" aria-haspopup="true" aria-expanded="false">
+                        Destination ▾
+                    </button>
+                    <div class="dropdown-panel" aria-hidden="true">
+                        <a href="./destination/sabang.html" class="dropdown-item">Sabang</a>
+                        <a href="./destination/toba.html" class="dropdown-item">Toba</a>
+                        <a href="./destination/bromo.html" class="dropdown-item">Bromo</a>
+                        <a href="./destination/labuanbajo.html" class="dropdown-item">Labuan Bajo</a>
+                        <a href="./destination/rajaampat.html" class="dropdown-item">Raja Ampat</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="landing-container">
+
+        <img 
+            src="https://i.imgur.com/AlXf6fy.jpeg"
+            alt="Logo Utama"
+            class="landing-logo"
+        />
+
+        <h1 class="landing-title">MAU KEMANA KITA</h1>
+        <p class="landing-subtitle">by Moh Reza Alhasny</p>
+
+        <div class="contact-section">
+            <div class="contact-title">CONTACT PERSON</div>
+            
+            <div class="contact-list">
+                <a href="https://wa.me/+6281311893500" target="_blank" class="contact-link">
+                    <span class="icon">📞</span> +62 813 1189 3500
+                </a>
+
+                <a href="mailto:mohrezaalhasny@gmail.com" class="contact-link">
+                    <span class="icon">✉️</span> mohrezaalhasny@gmail.com
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        (function(){
+            const toggle = document.querySelector('.drop-toggle');
+            const panel = document.querySelector('.dropdown-panel');
+
+            if(toggle && panel){
+                toggle.addEventListener('click', function(e){
+                    e.stopPropagation();
+                    const visible = panel.getAttribute('aria-hidden') === 'false';
+                    panel.setAttribute('aria-hidden', visible ? 'true' : 'false');
+                    toggle.setAttribute('aria-expanded', visible ? 'false' : 'true');
+                });
+
+                document.addEventListener('click', function(ev){
+                    if (!ev.target.closest('.nav-item-dropdown')) {
+                        panel.setAttribute('aria-hidden', 'true');
+                        toggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        })();
+    </script>
+
+</body>
+</html>
