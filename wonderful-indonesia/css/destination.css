@@ -1,0 +1,118 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", serif;
+  background: linear-gradient(to bottom, #fff8e6 0%, #ffffff 50%, #fff8e6 100%);
+  color: #222;
+}
+
+/* HEADER */
+.site-header {
+  width: 100%;
+  padding: 18px 40px;
+  position: sticky;
+  top: 0;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  z-index: 999;
+}
+
+.header-inner {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-logo {
+  height: 55px;
+}
+
+/* NAVIGATION */
+.site-nav .nav-list {
+  display: flex;
+  gap: 42px;
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 600;
+  color: #111;
+  padding: 5px 10px;
+  transition: 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #c59d43;
+}
+
+/* MAIN SECTION */
+.dest-main {
+  max-width: 1300px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 46px;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #222;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* GRID */
+.dest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  padding: 30px;
+}
+
+.dest-card {
+  background: #ffffffcc;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: 0.3s ease;
+}
+
+.dest-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.dest-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 16px;
+}
+
+/* BUTTON EMAS */
+.gold-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #d4a844, #f7d78b, #d8ac4a);
+  padding: 10px 20px;
+  border-radius: 30px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+
+.gold-btn:hover {
+  filter: brightness(1.15);
+}

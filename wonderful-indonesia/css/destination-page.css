@@ -1,0 +1,166 @@
+/* ===================== GLOBAL ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fff;
+  color: #222;
+}
+
+/* ===================== HEADER ===================== */
+.site-header {
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  padding: 10px 0;
+}
+
+.header-inner {
+  max-width: 1250px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-logo {
+  height: 55px;
+  border-radius: 6px;
+}
+
+/* ===================== NAVIGATION ===================== */
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  padding: 6px 4px;
+  font-size: 16px;
+}
+
+.nav-link:hover {
+  color: #0078ff;
+}
+
+/* ===================== DROPDOWN ===================== */
+.nav-item-dropdown {
+  position: relative;
+}
+
+.drop-toggle {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.dropdown-panel {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 180px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: 0.25s ease;
+}
+
+.dropdown-panel[aria-hidden="false"] {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-item:hover {
+  background: #f4f4f4;
+}
+
+/* ===================== MAIN ===================== */
+.destination-main {
+  max-width: 1150px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.destination-title {
+  font-size: 46px;
+  font-family: 'Cinzel', serif;
+  margin-bottom: 30px;
+}
+
+/* ===================== VIDEO ===================== */
+.video-container {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+}
+
+video {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 35px;
+}
+
+/* ===================== SLIDESHOW ===================== */
+.slideshow {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+}
+
+.slideshow img {
+  width: 100%;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* ===================== DESCRIPTION ===================== */
+.slide-description {
+  max-width: 850px;
+  margin: 20px auto 40px;
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  text-align: center;
+  min-height: 80px;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 600px) {
+  .destination-title {
+    font-size: 34px;
+  }
+
+  .slide-description {
+    font-size: 16px;
+  }
+}
